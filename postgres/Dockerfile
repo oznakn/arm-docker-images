@@ -135,8 +135,7 @@ RUN set -ex \
 	&& rm -rf \
 		/usr/src/postgresql \
 		/usr/local/share/doc \
-		/usr/local/share/man \
-	&& find /usr/local -name '*.a' -delete
+		/usr/local/share/man
 
 # make the sample config easier to munge (and "correct by default")
 RUN sed -ri "s!^#?(listen_addresses)\s*=\s*\S+.*!\1 = '*'!" /usr/local/share/postgresql/postgresql.conf.sample
